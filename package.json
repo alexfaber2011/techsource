@@ -7,6 +7,9 @@
   },
   "dependencies": {
     "express": "3.5.0",
-    "jade": "*"
+    "jade": "*",
+    "grunt": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-watch": "*"
   }
 }
