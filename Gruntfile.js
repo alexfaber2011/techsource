@@ -3,16 +3,16 @@ module.exports = function(grunt) {
         less: {
             development: {
                 options: {
-                    paths: ["./bower_components/bootstrap/less"],
+                    paths: ["./public/bower_components/bootstrap/less"],
                     yuicompress: true
                 },
                 files: {
-                    "./public/stylesheets/style.css": "./bower_components/bootstrap/less/bootstrap.less"
+                    "./public/stylesheets/style.css": "./public/bower_components/bootstrap/less/bootstrap.less"
                 }
             }
         },
         watch: {
-            files: "./bower_components/bootstrap/less/*",
+            files: "./public/bower_components/bootstrap/less/*",
             tasks: ["less"]
         }
     });
