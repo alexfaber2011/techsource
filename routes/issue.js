@@ -15,7 +15,7 @@ module.exports = function(app) {
 	
 	app.post('/issues/new', function(req, res){
 		var newIssue         = new Issue();
-		newIssue.useremail   = 'anthony@fuck.com';
+		newIssue.useremail   = req.user.local.email;
 		newIssue.title       = req.body.title;
 		newIssue.description = req.body.description;
 		newIssue.address     = req.body.address;

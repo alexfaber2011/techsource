@@ -27,12 +27,25 @@ require('express-helpers')(app);
 app.use(express.json());       // to support JSON-encoded bodies
 app.use(express.urlencoded()); // to support URL-encoded bodies
 
-// required for passport
-app.use( express.cookieParser() );
-app.use(express.session({ secret: 'foobar' })); // session secret
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
-app.use(flash()); // use connect-flash for flash messages stored in session
+//required for passport
+app.configure(function(){
+	app.use( express.cookieParser() );
+	app.use(express.session({ secret: 'foobar' })); // session secret
+	app.use(passport.initialize());
+	app.use(passport.session()); // persistent login sessions
+	app.use(flash()); // use connect-flash for flash messages stored in session
+});
+
+
+// app.configure(function() {
+//   app.use(express.static('public'));
+//   app.use(express.cookieParser());
+//   app.use(express.bodyParser());
+//   app.use(express.session({ secret: 'keyboard cat' }));
+//   app.use(passport.initialize());
+//   app.use(passport.session());
+//   app.use(app.router);
+// });
 
 // all environments
 app.set('port', process.env.PORT || 3000);
