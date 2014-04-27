@@ -32,9 +32,19 @@
 
 			</div>
 		</div>
+		
+		<div class="col-sm-6">
+			<% for (var i = 0; i < issues.length; i++) { %>
+				<div class="well">
+					<%= issues[i] %>
+				</div>
+				<% } %>
+		</div>
 
-	</div>
+	</div><!-- /.row -->
 
-</div>
+	<button type="button" class="btn btn-default"><a href='/issues/new' >Create issue</a></button> 
+
+</div><!-- /.container --> 
 </body>
 </html>

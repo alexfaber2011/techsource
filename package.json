@@ -11,6 +11,8 @@
     "ejs": "~0.8.5",
     "express": "3.5.0",
     "google-maps": "^2.0.0",
+		"express-helpers": "*",
+		"geocoder": "*",
     "grunt": "*",
     "grunt-contrib-less": "*",
     "grunt-contrib-watch": "*",
