@@ -7,8 +7,8 @@ var issue 	 = require('./issue.js')
 var userSchema = mongoose.Schema({
 
     local         : {
-        email		: String,
-		isFixer		: Boolean,
+        email			: String,
+				isFixer		: Boolean,
         password	: String
     }
 	});
