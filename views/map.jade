@@ -6,7 +6,9 @@ block append head
 		html{ height: 100%; }
 		body{ height: 100%; margin: 0; padding: 0; }
 		#map-canvas{ height: 100%; }
+	script(type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js")
+	script(type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
 	script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy38Zr0-VOGhFZi20fq9Di3BmK9J6ONvE&sensor=true")
-	script(type="text/javascript" src="javascripts/map-initialize.js")
+	script(type="text/javascript" src="/javascripts/map-initialize.js")
 block content
 	div#map-canvas

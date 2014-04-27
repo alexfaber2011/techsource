@@ -28,5 +28,4 @@ issueSchema.methods.generateLatLong = function(address, city, state) {
 	return latlong;
 };
 
-
 module.exports = mongoose.model('Issue', issueSchema);
