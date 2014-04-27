@@ -33,6 +33,11 @@
 					</p>
 			</div>
 			<button type="button" class="btn btn-default"><a href='/issues/new' >Create issue</a></button> 
+			<% if(user.local.isFixer == true) {%>
+				<button type="button" class="btn btn-default"><a href='/map' >Issues Map</a></button> 
+			<% } %>
+				
+			
 			
 		</div>
 		
