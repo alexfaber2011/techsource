@@ -26,6 +26,7 @@ userSchema.methods.validPassword = function(password) {
 
 // return all issues that belong to this user
 userSchema.methods.getIssues = function(callback) {
+	console.log(this.email);
 	return issue.find({email: this.email}, callback);
 };
 
