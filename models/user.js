@@ -7,6 +7,7 @@ var issue 	 = require('./issue.js')
 var userSchema = mongoose.Schema({
 
     local         : {
+				id				: String,
         email			: String,
 				isFixer		: Boolean,
         password	: String
@@ -26,7 +27,7 @@ userSchema.methods.validPassword = function(password) {
 
 // return all issues that belong to this user
 userSchema.methods.getIssues = function(callback) {
-	return issue.find({email: this.email}, callback);
+	return issue.find({email: this.local.email}, callback);
 };
 
 // create the model for users and expose it to our app

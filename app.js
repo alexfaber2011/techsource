@@ -28,8 +28,15 @@ app.use(express.json());       // to support JSON-encoded bodies
 app.use(express.urlencoded()); // to support URL-encoded bodies
 
 // required for passport
-app.use( express.cookieParser() );
-app.use(express.session({ secret: 'foobar' })); // session secret
+app.use(express.cookieParser() );
+app.use(express.bodyParser()); // get information from html forms
+app.use(express.favicon());
+app.use(express.session({ 
+	secret: 'foobar', 
+	cookie: {
+		maxAge: 36000000000
+	}
+})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
@@ -38,7 +45,6 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
@@ -55,7 +61,7 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 require('./routes/passport.js')(app, passport); // load our routes and pass in our app and fully configured passport
-require('./routes/map.js')(app);
+require('./routes/map.js')(app, passport);
 require('./routes/issue.js')(app);
 
 http.createServer(app).listen(app.get('port'), function(){
