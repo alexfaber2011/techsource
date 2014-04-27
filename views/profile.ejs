@@ -20,8 +20,10 @@
 
 		<!-- LOCAL INFORMATION -->
 		<div class="col-sm-6">
+			<div class"well">
+				<h3><span class="fa fa-user"></span> User Info</h3>
+			</div>
 			<div class="well">
-				<h3><span class="fa fa-user"></span> Local</h3>
 
 					<p>
 						<strong>Id</strong>: <%= user._id %><br>
@@ -29,22 +31,25 @@
 						<strong>Fixer?</strong>: <%= user.local.isFixer %><br>
 						<strong>Password</strong>: <%= user.local.password %>
 					</p>
-
 			</div>
+			<button type="button" class="btn btn-default"><a href='/issues/new' >Create issue</a></button> 
+			
 		</div>
 		
 		<div class="col-sm-6">
+			<div class"well">
+				<h3><span class="glyphicon glyphicon-wrench"></span> Issues</h3>
+			</div>
 			<% for (var i = 0; i < issues.length; i++) { %>
 				<div class="well">
-					<%= issues[i] %>
+					<strong>Title: </strong><%= issues[i].title %></br>
+					<strong>Description: </strong><%= issues[i].description %></br>
+					<strong>Address: </strong><%= issues[i].address %></br>
 				</div>
 				<% } %>
 		</div>
 
 	</div><!-- /.row -->
-
-	<button type="button" class="btn btn-default"><a href='/issues/new' >Create issue</a></button> 
-
 </div><!-- /.container --> 
 </body>
 </html>
