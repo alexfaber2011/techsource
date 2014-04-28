@@ -20,7 +20,7 @@ var issueSchema = mongoose.Schema({
 issueSchema.methods.generateLatLong = function(address, city, state, callback) {
 	locationString = address + " " + city + " " + state;
 	geocoder.geocode(locationString, function(err, data) {
-		console.log("locationJSON: " + data.results[0].geometry.location.lat);
+		//console.log("locationJSON: " + data.results[0].geometry.location.lat);
 		lat = data.results[0].geometry.location.lat;
 		long = data.results[0].geometry.location.lng;
 		var latlong = new Array();
